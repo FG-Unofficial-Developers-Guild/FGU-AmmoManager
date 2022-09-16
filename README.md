@@ -2,7 +2,7 @@
 
 This D&D 5E extension allows players to link an ammo entry in their inventory to the ammo a weapon uses in the actions tab of their character sheet. The linked ammo's count will be automatically changed in the actions tab when it is increased or decreased in the inventory, and - upon ammo recovery - will update the inventory's ammo count accordingly.
 
-Ammo bundles (i.e. "Arrows (20)" ) are handled correctly, and ammo will only be removed from the inventory in batches of the number listed in the item's name (20 in this case). The remainder will stay ticked in the actions tab (future recoveries will not take into account the remainder from a previous recovery. For this reason, it is recommended you adjust the batch amount in your inventory manually after a recovery, or you use ammo singles).
+Ammo bundles (i.e. "Arrows (20)" ) are handled correctly, and ammo will only be removed from the inventory in batches of the number listed in the item's name (20 in this case). The remainder will stay ticked in the actions tab (future recoveries will not take into account the remainder from a previous recovery. For this reason, it is recommended you adjust the bundle amount in your inventory manually after a recovery, or you use ammo singles).
 
 An added house rule setting allows you to pick between 25%, 50% (default), 75%, and 100% arrow recovery.
 
