@@ -8,13 +8,13 @@ An added house rule setting allows you to pick between 25%, 50% (default), 75%, 
 
 ![Example](https://i.imgur.com/nmSlb1v.gif)
 
-###Specifics:
+### Specifics:
 In order to be correctly linked, an item record must be in the players inventory and must have the subtype "Ammunition". The copy of the record that exists in the inventory must be dragged onto the empty link space on the actions tab next to the ammo count for the weapon you want to link it to. Multiple weapons can share the same ammo entry in the inventory, and their checkboxes will be synced. Two new radial menu options will appear when right-clicking the ammo counter: "Remove Ammo Link" to break the link between the weapon and the ammo entry in the inventory, and "Recover Ammo" to untick all ticked ammo checkboxes and remove half (by default) the expended ammo from your inventory.
 
-###Compatibility:
+### Compatibility:
 This extension should be fully compatible with most extensions, unless another extension modifies the ammo section of the actions tab.
 
-###Changelog:
+### Changelog:
 - Hotfix to v1.0.1
 --Fixed invalid processing when removing ammo not linked to any weapon from an inventory.
 - Updated to v1.0.1
