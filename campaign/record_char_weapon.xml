@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="char_weapon" merge="join">
+		<sheetdata>
+			<label name="label_ammo" merge="replace">
+				<anchored width="50">
+					<top parent="damageview" anchor="bottom" relation="relative" offset="5" />
+					<left offset="25" />
+				</anchored>
+				<static textres="char_label_weaponammo" />
+				<script>
+					function onInit()
+						registerMenuItem("Remove Ammo Link", "shortcutdelete", 1);
+						registerMenuItem("Recover Ammo", "halve", 2);
+					end
+					
+					function onMenuSelection(selection)
+						if selection == 1 then
+							CharAmmoManager.clearAmmoLink(window.getDatabaseNode());
+						end
+						if selection == 2 then
+							window.ammolink.recoverAmmo();
+						end
+					end
+				</script>
+			</label>
+			<basicnumber name="maxammo" merge="join">
+				<min>0</min>
+				<max>100</max>
+				<script>
+					function onInit()
+						super.onInit();
+						registerMenuItem("Remove Ammo Link", "shortcutdelete", 1);
+						registerMenuItem("Recover Ammo", "halve", 2);
+					end
+					
+					function onMenuSelection(selection)
+						if selection == 1 then
+							CharAmmoManager.clearAmmoLink(window.getDatabaseNode());
+						end
+						if selection == 2 then
+							window.ammolink.recoverAmmo();
+						end
+					end
+				</script>
+			</basicnumber>
+			<state_charammocounter name="ammocounter" merge="join">
+				<script>
+					function onInit()
+						super.onInit();
+						registerMenuItem("Remove Ammo Link", "shortcutdelete", 1);
+						registerMenuItem("Recover Ammo", "halve", 2);
+					end
+					
+					function onMenuSelection(selection)
+						if selection == 1 then
+							CharAmmoManager.clearAmmoLink(window.getDatabaseNode());
+						end
+						if selection == 2 then
+							window.ammolink.recoverAmmo();
+						end
+					end
+				</script>
+			</state_charammocounter>
+			<linkfield name="ammolink" insertafter="label_ammo">
+				<anchored width="20" height="20">
+					<top parent="damageview" anchor="bottom" relation="relative" offset="-20" />
+					<left offset="0" />
+				</anchored>
+				<script file="campaign/scripts/ammo_link.lua" />
+			</linkfield>
+		</sheetdata>
+	</windowclass>
+</root>

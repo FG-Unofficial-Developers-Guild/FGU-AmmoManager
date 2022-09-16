@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root version="3.0" release="8">
+	<announcement text="5E Ammo Manager" icon="AMLogo" />
+	<!-- Attributes -->
+	<properties>
+		<name>5E Add-on - Ammo Manager</name>
+		<version>1.0.1</version>
+		<description>Allows players to link ammo in Inventory to the ammo used in Actions</description>
+		<loadorder>58</loadorder>
+		<author>GEONE</author>
+		<ruleset>
+			<name>5E</name>
+		</ruleset>
+	</properties>
+
+	<base>
+		<icon name="AMLogo" file="graphics/logo.png" />
+		<includefile source="campaign/record_char_weapon.xml" />
+		<includefile source="strings/ammo_strings.xml" />
+		<script name="CharAmmoManager" file="scripts/manager_char_weapon.lua"/>
+		<script name="DataOptionsAmmo" file="scripts/data_options_ammo.lua"/>
+	</base>
+</root>
