@@ -56,7 +56,10 @@ function onDataChanged()
 	local shortcut = CharAmmoManager.getAmmoLink(window.getDatabaseNode());
 	if shortcut and shortcut ~= "" then
 		local nodeInvItem = DB.findNode(shortcut);
+		local onDataChangedTemp = onDataChanged;
+		onDataChanged = nil; -- prevents infinite loop when recalculating ammo
 		CharAmmoManager.recalculateAmmoFromTemplate(nodeInvItem, window.getDatabaseNode());
+		onDataChanged = onDataChangedTemp;
 	end
 end
 function onDrop(x, y, draginfo)
