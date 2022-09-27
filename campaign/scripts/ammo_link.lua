@@ -51,15 +51,17 @@ function recoverAmmo(nRecoveryCoef)
 	end
 end
 function onDataChanged()
-	local bRanged = (window.type.getValue() ~= 0);
-	window.ammolink.setVisible(bRanged);
-	local shortcut = CharAmmoManager.getAmmoLink(window.getDatabaseNode());
-	if shortcut and shortcut ~= "" then
-		local nodeInvItem = DB.findNode(shortcut);
-		local onDataChangedTemp = onDataChanged;
-		onDataChanged = nil; -- prevents infinite loop when recalculating ammo
-		CharAmmoManager.recalculateAmmoFromTemplate(nodeInvItem, window.getDatabaseNode());
-		onDataChanged = onDataChangedTemp;
+	if Session.IsHost then
+		local bRanged = (window.type.getValue() ~= 0);
+		window.ammolink.setVisible(bRanged);
+		local shortcut = CharAmmoManager.getAmmoLink(window.getDatabaseNode());
+		if shortcut and shortcut ~= "" then
+			local nodeInvItem = DB.findNode(shortcut);
+			local onDataChangedTemp = onDataChanged;
+			onDataChanged = nil; -- prevents infinite loop when recalculating ammo
+			CharAmmoManager.recalculateAmmoFromTemplate(nodeInvItem, window.getDatabaseNode());
+			onDataChanged = onDataChangedTemp;
+		end
 	end
 end
 function onDrop(x, y, draginfo)
