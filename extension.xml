@@ -5,7 +5,7 @@
 	<!-- Attributes -->
 	<properties>
 		<name>5E Add-on - Ammo Manager</name>
-		<version>1.0.1.3</version>
+		<version>1.0.1.4</version>
 		<description>Allows players to link ammo in Inventory to the ammo used in Actions</description>
 		<loadorder>58</loadorder>
 		<author>GEONE</author>
